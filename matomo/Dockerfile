@@ -3,7 +3,7 @@ ARG repository=local
 ARG tag=latest
 FROM --platform=$BUILDPLATFORM ${repository}/download:${tag} AS download
 
-ARG MATOMO_VERSION="3.13.5"
+ARG MATOMO_VERSION="4.12.3"
 ARG MATOMO_FILE_SHA256="b9af7dabc6e727762cef58cecd16de7bc75886f8dacc910070632d83a44c2aad"
 
 RUN --mount=type=cache,id=matomo-downloads,sharing=locked,target=/opt/downloads \
