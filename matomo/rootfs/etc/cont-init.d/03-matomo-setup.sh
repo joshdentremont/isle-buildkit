@@ -103,8 +103,8 @@ SET @site = '${site}',
 
 -- Update or create row if 'site' already exists.
 -- Default values come from 'create-matomo-database.sql.tmpl'.
-INSERT INTO matomo_site (site, name, main_url, ts_created, ecommerce, sitesearch, sitesearch_keyword_parameters, sitesearch_category_parameters, timezone, currency, exclude_unknown_urls, excluded_ips, excluded_parameters, excluded_user_agents, \`group\`, type, keep_url_fragment, creator_login)
-VALUES (@site, @name, @host, NOW(), 0, 1, '', '', @timezone, 'USD', 0, '', '', '', '', 'website', 0, 'anonymous')
+INSERT INTO matomo_site (site, name, main_url, ts_created, ecommerce, sitesearch, sitesearch_keyword_parameters, sitesearch_category_parameters, timezone, currency, exclude_unknown_urls, excluded_ips, excluded_parameters, excluded_user_agents, excluded_referrers, \`group\`, type, keep_url_fragment, creator_login)
+VALUES (@site, @name, @host, NOW(), 0, 1, '', '', @timezone, 'USD', 0, '', '', '', '', '', 'website', 0, 'anonymous')
 ON DUPLICATE KEY UPDATE
     name = @name,
     main_url = @host,
