@@ -111,8 +111,8 @@ ON DUPLICATE KEY UPDATE
     timezone = @timezone;
 
 -- Update or create row if 'user' already exists.
-INSERT INTO matomo_user (login, password, alias, email, twofactor_secret, token_auth, superuser_access, date_registered, ts_password_modified)
-VALUES (@user, @password, @user, @email, '', @token, 0, NOW(), NOW())
+INSERT INTO matomo_user (login, password, email, twofactor_secret, superuser_access, date_registered, ts_password_modified)
+VALUES (@user, @password, @email, '', 0, NOW(), NOW())
 ON DUPLICATE KEY UPDATE
     password = @password,
     email = @email,
