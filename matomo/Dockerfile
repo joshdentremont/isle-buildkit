@@ -4,7 +4,7 @@ ARG tag=latest
 FROM --platform=$BUILDPLATFORM ${repository}/download:${tag} AS download
 
 ARG MATOMO_VERSION="4.12.3"
-ARG MATOMO_FILE_SHA256="551fb393541cc12dc3481fd606f058b43868dfc7cfd3dea921e719822186d7b7"
+ARG MATOMO_FILE_SHA256="00efe4335c9cee9f269b5e8a337026af7f115c05cde1e9ae47485592372b37ee"
 
 RUN --mount=type=cache,id=matomo-downloads,sharing=locked,target=/opt/downloads \
     MATOMO_FILE="matomo-${MATOMO_VERSION}.tar.gz" && \
